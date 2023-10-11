@@ -27,7 +27,7 @@ export default function Feed(){
 
           {/* Simple component that is used for text elements instead of p-tags and headings */}
           <Typography className="copyright" variant="body2" sx={{mt: 1.5, color: '#fff'}}>
-            Copyright 2023 crmeyer
+            crmeyer "YouTube"
           </Typography>
         </Box>
 
