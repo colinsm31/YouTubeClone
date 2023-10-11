@@ -2,8 +2,7 @@ import { useState,useEffect } from "react"
 import { Stack } from "@mui/material"
 import { categories } from "../utils/constants"
 
-export default function Sidebar(){
-  const selectedCategory = 'New';
+export default function Sidebar({selectedCategory, setSelectedCategory}){
 
   return(
     <>
@@ -18,7 +17,10 @@ export default function Sidebar(){
       >
         {/* Map over the categories and instantly return the icon and name of each one */}
         {categories.map((category) => (
-          <button className="category-btn"
+          <button 
+            className="category-btn"
+            // Now when you click on a category it changes that to be the selected one
+            onClick={() => setSelectedCategory(category.name)}
             style={{
               background: category.name === selectedCategory && '#fc1503',
               color: 'white'
