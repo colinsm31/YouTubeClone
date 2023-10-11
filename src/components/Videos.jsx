@@ -3,13 +3,19 @@ import { Stack, Box } from "@mui/material"
 import VideoCard from "./VideoCard"
 import ChannelCard from "./ChannelCard"
 
-export default function Videos({videos}){
+export default function Videos({videos, direction}){
   // console.log(videos);
+
+  // Adding in loader
+  if(!videos?.length){
+    return 'loading...'
+  }
 
   return(
     <>
       <Stack 
-        direction='row' 
+        // Check first for if there is a preferred direction -> otherwise show in rows
+        direction={direction || 'row'} 
         flexWrap='wrap' 
         justifyContent='start'
         gap={2}
